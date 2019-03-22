@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>v-for指令</title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="vfor">
+			<li v-for="value in arr">{{value}}</li><!-- 循环显示数组 -->
+			<ul v-for="(u,index) in list">
+			<!-- 在()中不同与传统的(key,value),这个指令是相反的(value,key) -->
+				<!-- 在index由于索引是由0开始，所以index加不加1你自己看着办 -->
+				<li>{{index}},{{u.name}},{{u.age}},{{u.birthday}}</li>
+			</ul>
+		</div>
+		<a href="v-on指令.html"><h1> → → → NEXT</h1></a>
+	</body>
+	<script type="text/javascript">
+		var vu = new Vue({
+			el:'#vfor',
+			data:{
+				arr:[1,2,3,3,3,2,5,9],
+				list:[
+					{name:'isli',age:'23',birthday:1996},
+					{name:'isvue',age:'28',birthday:1991},
+					{name:'isangular',age:'27',birthday:1992},
+					]
+			}
+		})
+		console.log(vu.list);
+	</script>
+</html>

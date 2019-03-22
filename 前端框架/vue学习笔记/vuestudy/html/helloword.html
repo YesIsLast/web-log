@@ -7,13 +7,14 @@
 	</head>
 	<body>
 		<div id="hw">
-			<!-- {{}}这个符号叫做模版，用来进行数据绑定，html和js中进行数据通信的 -->
+			<!-- {{}}这个符号叫做模板，用来进行数据绑定，html和js中进行数据通信的 -->
 			{{msg}}
 		</div>
-		
+		<a href="v-model指令.html"><h1>→ → → next</h1></a>
 	</body>
-	
 	<script type="text/javascript">
+		Vue.config.devtools = false;//配置是否允许vue-devtools插件检查代码，开发环境设为true,生产环境设为false
+		Vue.config.productionTip = false;//阻止vue启动时生成生产提示
 		//创建一个Vue的实例
 		new Vue({
 			el:'#hw',//表示这个vue实例要关联到那个元素(html中的id元素HW);
