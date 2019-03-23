@@ -6,9 +6,32 @@
 		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
 	</head>
 	<body>
-		
+		<div id="von">
+			<input type="text"v-model="content" value="" placeholder="请输入你要输入的" />
+			<button type="button" v-on:click="oneclick">单击事件</button>
+			<button type="button" v-on:mouseover="oneclick">鼠标经过事件</button>
+			<button type="button" v-on:dblclick="oneclick">双击事件</button>
+			<button type="button" v-on:mousedown="oneclick">鼠标按下事件</button>
+		</div>
+		<a href="v-show指令.html">NEXT</a>
 	</body>
 	<script type="text/javascript">
-		
+		let orthis = new Vue({
+			el:'#von',
+			data:{//只用来存储数据
+				content:''
+				},
+			methods:{//只用来存储方法
+				oneclick:function(){
+					//当你想要在Vue实例中访问数据data内容或其他内容如调用方法,那么你就需要使用this关键字
+					alert(this.content);//this表示当前实例,当然你也可以为这个实例声明一个变量
+					console.log(orthis.content);//像这样使用
+					this.onmouse();//调用方法需使用this关键字
+				},
+				onmouse:function(){
+					console.log("在本实例中调用方法");
+				}
+			}
+		})
 	</script>
 </html>

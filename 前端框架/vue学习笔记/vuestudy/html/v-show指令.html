@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>v-show指令</title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="shw">
+			<h1 style="color: deeppink;" v-show="flag">是否显示这段内容</h1>
+			<!-- 可以在click事件中调用函数来达到效果，也可以在事件中直接写代码 -->
+			<button type="button" v-on:click="flag=!flag">隐藏上段内容</button>
+			<!-- 将flag值取反实现显示隐藏循环 -->
+		</div>
+		<a href="表单处理实战.html">NEXT</a>
+	</body>
+<script type="text/javascript">	
+	new Vue({
+		el:'#shw',
+		data:{
+			name:'shwname',
+			flag:true
+		},
+		methods:{
+// 			clickshow:function(){
+// 				this.flag=false;//普通做法
+// 				this.flag!=this.flag;//可以对flag的值取反,这样就实现了,点击隐藏再次点击显示
+// 				
+// 			}
+		}
+	})
+</script>
+</html>
