@@ -63,7 +63,6 @@
 						<td>{{data.addres}}</td>
 						<td>{{data.date}}</td>
 						<td>
-							<button type="button" class="btn btn-warning" v-on:click="updateuse(index)">修改</button>
 							<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delmodal" v-on:click="indexid=index">删除</button>
 						</td>
 					</tr>
@@ -103,7 +102,7 @@
 		</div>
 
 
-
+<a href="事件和属性.html">NEXT事件和属性</a>
 	</body>
 
 	<script type="text/javascript">
@@ -159,10 +158,6 @@
 				//删除选中
 				alldel(){
 					
-				},
-				//更改信息
-				updateuse(index) {
-					// this.userslist[index]
 				},
 				//全选/反选
 				allcheck() {
