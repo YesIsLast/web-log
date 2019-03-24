@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>事件</title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="thing">
+			<p>@click='xxx'</p>
+			<button type="button" @click='ck'>点击事件简写</button>
+			<p>获取当前事件对象</p>
+			<button type="button" @click.stop="print($event)">点击获取</button>
+			<hr>
+			<a href="#" @click='searchURL'>事件默认行为表现</a>
+			<hr>
+			<a href="#" @click='nosearchURL($event)'>JS事件默认行为阻止</a>
+			<hr >
+			<a href="#" @click.prevent="vnosearchURL">Vue阻止事件默认行为</a>
+			<hr >
+			<!-- 键盘事件 -->
+			<span>在输入框中点击键盘回车事件</span>
+			<input type="text" @keydown="keyevent($event)" />
+			<!-- 用户进行表单提交使用键盘事件没有用点击事件 -->
+			<hr >
+			<input type="text"value="用户输入完的信息" @keydown="submitkey($event)" />
+			<hr >
+			<input type="text" value="Vue处理方法" @keydown.13="vuesubmitkey" /><hr >
+			<input type="text" value="自定义键盘事件(键盘码)" @keydown.0="custom" /><hr >
+			<input type="text" value="自定义键盘事件(键盘码别名)" @keydown.0="custom" />
+		</div>
+<a href="属性.html">NEXT属性</a>
+	</body>
+	<script type="text/javascript">
+		// 自定义键盘事件
+		Vue.config.keyCodes={
+			zero:0
+		}
+		
+		new Vue({
+			el: '#thing',
+			data: {
+
+			},
+			methods: {
+				ck() {
+					console.log('事件简写');
+				},
+				//获取当前时间对象
+				print(e) {
+					console.log(e);
+				},
+				searchURL(e) {
+					console.log('查看URL部分是否进行了改变,URL尾部加上了#');
+					// e.preventDefault();
+				},
+				nosearchURL(e){
+					console.log('阻止了a标签的默认事件行为');
+					e.preventDefault();
+				},
+				vnosearchURL(){
+					console.log('指令修饰符阻止了a标签的默认事件行为，查看URL尾部有没有#');
+				},
+				//捕获键盘事件
+				keyevent(e){
+					console.log('查看当前事件对象');
+					console.log(e);
+					
+				},
+				submitkey(e){//用户键盘事件函数
+					if(e.keyCode=== 13){
+						console.log('用户点击了回车事件，请进行提交操作');
+					}else{
+						console.log('他没有按回车，乱按的，看一下他按了那些事件');
+						console.log(e);
+					}
+				},
+				vuesubmitkey(){
+					console.log('用户点击了回车事件，可以提交');
+				},
+				custom(){
+					console.log('自定义了数字键盘上的0键成功');
+				}
+				
+
+			}
+		})
+	</script>
+</html>
