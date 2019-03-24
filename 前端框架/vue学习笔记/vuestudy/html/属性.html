@@ -1,20 +1,42 @@
 <!DOCTYPE html>
 <html>
+	
 	<head>
 		<meta charset="utf-8">
 		<title>属性</title>
 		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+				.cssstyle{
+					color: #007BFF;
+				}
+				.cssstylebg{
+					background-color: #95999C;
+				}
+		</style>
 	</head>
 	<body>
 		<div id="attribute">
-			
+			<!-- <img v-bind:src="keyname" > -->
+			<p :class="csssty">查看这段话样式的属性绑定方法</p>
+			<p>将上句话附加个背景样式</p>
+			<p :class="[csssty,cssstybg]">查看这段话样式的属性绑定方法</p>
+			<!-- json形式，json中的属性值要是布尔值，可以将属性值在vue实例的data属性对象中，设置为变量通过逻辑判断来判断这个css样式是否要显示 -->
+			<!-- json对象中属性值为true表示显示css样式，属性为false表示不显示 -->
+			<p :class="{csssty:true,cssstybg:flag}">查看这段话样式的属性绑定方法</p>
+			<p :class="{cssstybg:num===1}">查看这段话样式的属性绑定方法</p>
+			<p :style="styleval">查看这段话</p>
 		</div>
+		<a href="模板.html">NEXT模板</a>
 	</body>
 	<script type="text/javascript">
 		new Vue({
 			el:'#attribute',
 			data:{
-				
+				keyname:'https://cn.vuejs.org/images/logo.png',
+				csssty:'cssstyle',
+				cssstybg:'cssstylebg',
+				flag:true,
+				styleval:{color:'red',backgroundColor:"black"}
 			},
 			methods:{
 				
