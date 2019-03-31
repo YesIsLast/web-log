@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>自定义过滤器</title>
+		<script src="../js/vue.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="filters">
+		<input type="number" readonly="readonly" placeholder="请尝试随意输入数值" v-model="inpdata"/>
+		<p>局部过滤器无参过滤后数值为：{{inpdata | number}}</p>
+		<p>局部过滤器有参过滤后数值为：{{inpdata | num(2)}}</p>
+		<p>全局过滤器有参过滤后数值为：{{inpdata | allnum(2)}}</p>
+		</div>
+		<a href="VUE发送ajax请求01.html">NEXT</a>
+	</body>
+	<script type="text/javascript">
+		Vue.filter('allnum',function(data,n){
+			return data.toFixed(n)*10;
+		});
+		new Vue({
+			el:'#filters',
+			data:{
+				inpdata: 0.12545
+			},
+			methods:{
+				
+			},
+			filters:{
+				//普通函数写法/无参过滤器写法
+				number (data){
+					return data + 10
+				},
+				//箭头函数写法/有参过滤器写法
+				num: (data,n) =>{
+					return data.toFixed(n);
+				}
+			}
+		})
+	</script>
+</html>

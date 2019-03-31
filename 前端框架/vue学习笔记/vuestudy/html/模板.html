@@ -7,18 +7,20 @@
 	</head>
 	<body>
 		<div id="template">
-			
+			<input type="text" v-model="info" /><br>
+			查看vue实例的双向绑定效果：{{info}}
 		</div>
+		<a href="过滤器.html">NEXT</a>
 	</body>
+	
 	<script type="text/javascript">
 		new Vue({
-			el:'#template',
-			data:{
-				
+			el: '#template',
+			data: {
+				info: '请随意输入',
+				flag:false
 			},
-			methods:{
-				
-			}
+			filters:
 		})
 	</script>
 </html>
