@@ -27,6 +27,8 @@ methods: {
 						url: 'data.json'
 					}).then(resp=>{
 						console.log(resp)
+					}).catch(resp=>{
+						console.log('请求失败')
 					})
 				}
 			}
@@ -40,3 +42,28 @@ json数据
 }
 ```
 
+#### 2.2、axios的POST请求使用
+
+	关于axios的POST请求有个天生缺陷，根据官方网站介绍POST请求可以按照以下方式请求
+```js
+axios.post('/user', {
+    firstName: 'Fred',
+    lastName: 'Flintstone'
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
+  axios({
+  method: 'post',
+  url: '/postresponse.php',
+  data: {
+    name: 'Fred'
+  }
+}).then(resp=>{
+	console.log(resp)
+})
+```
