@@ -14,12 +14,6 @@ git clone ****** github地址 *****
     查看git的帮助
     git help
 
-    本地创建并切换到新分支dev
-    git checkout  -b dev origin/dev
-    
-    更改当前默认master分支为dev分支
-    git branch --set-upstream-to=origin/dev master
-
     查看当前git状态
     git status
 
@@ -31,3 +25,9 @@ git clone ****** github地址 *****
 
     查看当前本地关联的远程分支
     git branch -vv
+
+    本地创建并切换到新分支dev
+    git checkout  -b dev origin/dev
+    
+    更改当前默认master分支为dev分支
+    git branch --set-upstream-to=origin/dev master
