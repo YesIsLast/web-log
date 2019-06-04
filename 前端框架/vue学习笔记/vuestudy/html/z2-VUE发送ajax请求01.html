@@ -9,6 +9,7 @@
 	<body>
 		<div id="ajaxvue">
 			<button @click="send">发送axios请求</button>
+			<button @click="sendpost">发送axios POST请求</button>
 		</div>
 	</body>
 	<script type="text/javascript">
@@ -22,9 +23,21 @@
 					axios({
 						method: 'get',
 						url: 'data.json'
-					}).then(resp=>{
+					}).then(resp => {
 						console.log(resp)
 					})
+				},
+				sendpost() {
+					axios({
+  method: 'post',
+  url: '/postresponse.php',
+  data: {
+    name: 'Fred'
+  }
+}).then(resp=>{
+	console.log(resp)
+})
+
 				}
 			}
 
