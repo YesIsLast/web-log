@@ -31,3 +31,18 @@ git clone ****** github地址 *****
     
     更改当前默认master分支为dev分支
     git branch --set-upstream-to=origin/dev master
+
+    取消当前更改
+    git checkout xxx.vue具体文件路径
+
+    暂存当前更改的所有文件
+    git add */.
+
+    提交所有暂存的文件
+    git commit -m"为当前提交添加备注"
+
+    更新相应远程分支至本地仓库
+    git pull origin master/其他分支名
+
+    推送本地更改至远程仓库指定分支
+    git push origin master/其他分支名
