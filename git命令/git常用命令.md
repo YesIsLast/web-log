@@ -26,6 +26,9 @@ git clone ****** github地址 *****
     查看当前本地关联的远程分支
     git branch -vv
 
+    克隆指定分支代码
+    git clone -b xxx分支名xxx xxx克隆地址
+
     本地创建并切换到新分支dev
     git checkout  -b dev origin/dev
     
