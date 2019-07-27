@@ -1,5 +1,6 @@
 # vue 路由
-### 路由中component 引用方法
+
+## 路由中component 引用方法
 
     在路由中注册组件写法有两种
 ### 第一种
@@ -21,3 +22,21 @@
     {
         path: '/', redirect: 'firstMenuFirstChildComponent'	// 默认配置成重定向第一页
     },
+## 同一路由重复触发
+  使用事件修饰符来解决此类问题，此类问题普遍应用于，后台管理系统中菜单栏重复点击，实现刷新当前页面功能
+  @click.capture
+```html
+  <el-menu-item @click.capture="back"></el-menu-item>
+```
+```js
+			// 处理重复点击路由时，可以刷新当前页面
+			back () {
+				let url = window.location.hash.slice(1)
+				this.prevPath
+				let path = this.$route.fullPath
+				if (this.prevPath === path) {
+					this.$router.push('/main/back')
+				}
+				this.prevPath = path
+			}
+```
