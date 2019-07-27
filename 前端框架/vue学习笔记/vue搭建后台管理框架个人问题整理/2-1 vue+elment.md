@@ -4,20 +4,3 @@
     项目创建命令 vue create ***
     项目生成时隐藏了一些配置文件，如果需要可以在项目根目录自行创建配置
     如vue.config.js
-## 2、关闭代码检查
-    module.exports = {
-    baseUrl: './',
-    lintOnSave : false,// 关闭代码检查
-    devServer: {
-        // proxy: {
-        //     '/api': {
-        //         target: 'http://192.168.1.8:8080',
-        //         ws: true,
-        //         changeOrigin: true,
-        //         pathRewrite: {
-        //             '^/api': ''
-        //         }
-        //     }
-        // }
-    }
-}
