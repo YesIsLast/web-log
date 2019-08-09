@@ -135,3 +135,37 @@ export default {
 };
 ```
 
+## 3、在子组件中定义指令传参并调用父组件方法
+
+    主要使用$emit
+
+子组件部分代码
+```js
+clickFather(){
+            let params = "我是一个子组件定义的指令所携带的参数"
+            // 为当前子组件定义个指令并传出参数
+            this.$emit('search',params)
+        }
+```
+
+```html
+<template>
+    <div>
+        <a-button @click="clickFather()">调用父组件中的方法</a-button>
+    </div>
+</template>
+<script>
+``` 
+
+父组件部分代码
+```js
+// 被子组件所调用的方法
+        childFun(childParams){
+            alert("查看当前子组件传过来的参数值")
+            alert(childParams)
+        }
+```
+
+```html 
+<demoChildComponent ref="demoChildComponent"         :fatherInputVal.sync="fatherInputValParam" @search='childFun'></demoChildComponent>
+```
