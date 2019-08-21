@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>jquery的ajax请求方式</title>
+		<script src="../public/jquery-3.4.1.js"></script>
+	</head>
+	<body>
+		<h1>点击下方按钮查看不同的请求方式</h1>
+		<button type="button" id="getBtn" onclick="getAjax()">get请求</button>
+	</body>
+	<script>
+		function getAjax() {
+			$.ajax({
+				// 在setting设置参数中,写请求配置
+				url:"https://www.jquery123.com/jQuery.ajax/",
+				type:"GET",
+				async:true,
+				dataType:"json",
+				data:{username:"admin",password:"123"},
+				error:function(jqXHR,textStatus,errorThrown ){
+					alert(textStatus)
+				},
+				success:function(data,textStatus,jqXHR){
+					// data 请求成功响应数据
+					// textStatus 响应状态码
+					// jqXHR XMLHttpRequest的对象
+					alert(data)
+				},
+				timeout:5000, // 设置请求超时时间,覆盖ajaxSetup全局配置
+				
+			}).done(function(data,textStatus,jqXHR){
+				// 请求成功后的回调函数
+			}).fail(function(jqXHR,textStatus,errorThrown){
+				// 请求失败的回调函数
+			}).always(function(data||jqXHR, textStatus, jqXHR||errorThrown){
+				// 一个可供选择的动态回调函数
+				// 可根据状态码判断当前是否成功,然后执行对应的结果操作
+			})
+		}
+		// 		$(document).ready(function(){
+		// 			// 当
+		// 			$("#getBtn").click(function(){
+		// 				alert("点击了按钮")
+		// 				$.ajax({
+		// 					// 在setting设置参数中,写请求配置
+		// 				})
+		// 			})
+		// 		})
+	</script>
+</html>
