@@ -19,12 +19,21 @@ git clone ****** github地址 *****
 
     查看当前本地使用分支
     git branch
+    
+    创建或选择分支
+    git branch -分支名称
+    
+    切换本地分支
+    git checkout -分支名称
 
     查看当前远程使用分支
     git branch -r
 
     查看当前本地关联的远程分支
     git branch -vv
+    
+    推送本地新建分支到远程仓库
+    git push --set-upstream origin backup
 
     克隆指定分支代码
     git clone -b xxx分支名xxx xxx克隆地址
