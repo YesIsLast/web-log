@@ -3,7 +3,7 @@
     安装windows环境的git软件
 
 git clone ****** github地址 *****
-# 中惠云创内部GITLAB
+# 内部GITLAB
 
     安装windows环境的git软件
     安装TortoiseGit
