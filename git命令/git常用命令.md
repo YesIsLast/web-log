@@ -58,3 +58,6 @@ git clone ****** github地址 *****
 
     推送本地更改至远程仓库指定分支
     git push origin master/其他分支名
+
+    还原文件已修改
+    git checkout 文件路径
