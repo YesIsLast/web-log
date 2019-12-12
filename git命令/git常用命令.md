@@ -21,7 +21,7 @@ git clone ****** github地址 *****
     git branch
     
     创建或选择分支
-    git branch -分支名称
+    git branch 分支名称
     
     切换本地分支
     git checkout -分支名称
