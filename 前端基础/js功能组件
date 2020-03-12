@@ -1,0 +1,4 @@
+// 阻止页面触摸穿透滑动
+        document.getElementById("sidebar-black").addEventListener('touchmove', function(e) {
+            e.preventDefault();
+        }, false);
