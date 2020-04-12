@@ -58,3 +58,30 @@ Date.prototype.Format = function(fmt) {
 	return fmt;
 }
 
+/**
+ * 数组去重
+ * @param {Object} list	数组
+ * @param {String} groupByName	数组对象要去重得字段
+ */
+function arrGroupBy(list, groupByName) {
+	let result = []
+	let obj = {}
+	// 数组对象去重[{name:"1"},{name:"2"},{name:"1"}]
+	if (groupByName) {
+		for (let i of list) {
+			if (!obj[i[groupByName]]) {
+				result.push(i[groupByName])
+				obj[i[groupByName]] = 1
+			}
+		}
+	}
+	// 数组去重[1,2,3,4,3,5,7,2]
+	else {
+		for (var i = 0; i < list.length; i++) {
+			if (result.indexOf(list[i]) == -1) {
+				result.push(list[i]);
+			}
+		}
+	}
+	return result
+}
