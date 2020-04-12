@@ -3,7 +3,29 @@
             e.preventDefault();
         }, false);
 // 地板值小数保留（终极大法）
-		formatTofixed(num,n){
+function formatTofixed(num,n){
 			let regxp = new RegExp('([0-9]+\.[0-9]{' + n + '})[0-9]*')
 			return num.toString().replace(regxp, "$1")
+		},
+
+		/**
+		 * 数组解析字符串
+		 * @param {Object} list
+		 */
+		function getJsonStringify(list) {
+			let result = ""
+			list.forEach(item => {
+				result = result + item + ","
+			})
+			return result.substr(0, result.length - 1)
+		},
+		/**
+		 * 字符串转数组
+		 * @param {Object} str 
+		 */
+		function getJsonSplit(str) {
+			if(str != ""){
+				return str.split(",")
+			}
+			return []
 		},
