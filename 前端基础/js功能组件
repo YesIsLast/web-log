@@ -2,3 +2,8 @@
         document.getElementById("sidebar-black").addEventListener('touchmove', function(e) {
             e.preventDefault();
         }, false);
+// 地板值小数保留（终极大法）
+		formatTofixed(num,n){
+			let regxp = new RegExp('([0-9]+\.[0-9]{' + n + '})[0-9]*')
+			return num.toString().replace(regxp, "$1")
+		},
