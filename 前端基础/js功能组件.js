@@ -1,3 +1,8 @@
+// 当前页面是否存在滚动条
+hasScrollbar() {
+  return document.body.scrollHeight > (window.innerHeight || document.documentElement.clientHeight);
+}
+
 // 阻止页面触摸穿透滑动
 document.getElementById("sidebar-black").addEventListener('touchmove', function(e) {
     e.preventDefault();
