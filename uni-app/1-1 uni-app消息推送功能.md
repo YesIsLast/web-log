@@ -58,9 +58,9 @@ onShow: function() {
             厂商通道：开启
             通知标题：华为透传第三次离线实验
             通知内容：华为透传第三次实验，消息未震动与响铃测试是否解决
-            通知类型：intent        intent:#Intent;component=软件包名自行替换/io.dcloud.PandoraEntry;S.parm1=value1;S.parm2=value2;end
+            通知类型：intent        intent:#Intent;action=android.intent.action.oppopush;launchFlags=0x14000000;component=软件包名自行替换/io.dcloud.PandoraEntry;S.UP-OL-SU=true;S.title=通知标题23;S.content=通知内容23;S.payload=test;end
             
-            S.parm1=value1;S.parm2=value2;为附加参数，非必填，仅在需要使用消息传递参数时使用
+            S.payload=test;为附加参数，非必填，仅在需要使用消息传递参数时使用
 
 ## 遇到的问题
 
