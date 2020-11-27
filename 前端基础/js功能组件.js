@@ -1,4 +1,7 @@
-
+// 检查并返回文件类型
+function checkFileType(filePath) {
+	return /\.jpg$|\.mp3$|\.jpeg$|\.gif$|\.png$|\.ico$|\.svg$/i.exec(filePath)[0]
+}
 // 对象数组排序
 var arr = [
 	{
