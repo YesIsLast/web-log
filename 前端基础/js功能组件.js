@@ -1,3 +1,44 @@
+// uni-app/html5plus  日志文件写入
+
+// 获取日志文件名称
+function getLogFileName() {
+	// 今日日期
+	let nowDate = getTimeStampDatetime("yyyy-MM-dd")
+	// 当前时间精确到秒
+	let nowTime = getTimeStampDatetime("HH:mm:ss")
+	// 文件名称
+	let fileName = 'huixing-app.text'
+	fileName = nowDate + '.text'
+	// 内容换行符(自定义)
+	let newLine = "\r\n" + "====================================" + "\r\n" + nowTime + " =>>>" + "\r\n"
+
+	return {
+		newLine: newLine,
+		fileName: fileName
+	}
+}
+// 日志内容写入
+function writeLog(params) {
+	plus.io.requestFileSystem(plus.io.PUBLIC_DOCUMENTS, function(fs) {
+		// 可通过fs操作PUBLIC_DOCUMENTS文件系统 
+		fs.root.getFile(getLogFileName().fileName, {
+			create: true
+		}, function(fileEntry) {
+			fileEntry.file(function(file) {
+				// create a FileWriter to write to the file
+				fileEntry.createWriter(function(writer) {
+					// Write data to file.
+					writer.seek(file.size - 1)
+					// 换行插入日志文件
+					writer.write(getLogFileName().newLine + params);
+				}, function(e) {});
+			});
+		});
+	}, function(error) {
+		console.error("日志写入错误", error)
+	});
+}
+
 // 检查并返回文件类型
 function checkFileType(filePath) {
 	return /\.jpg$|\.mp3$|\.jpeg$|\.gif$|\.png$|\.ico$|\.svg$/i.exec(filePath)[0]
