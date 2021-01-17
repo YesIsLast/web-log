@@ -1,5 +1,5 @@
 // uni-app/html5plus  日志文件写入
-
+// 关于开启文件系统权限与配置请参考官方介绍文档 https://www.html5plus.org/doc/zh_cn/io.html
 // 获取日志文件名称
 function getLogFileName() {
 	// 今日日期
@@ -20,6 +20,7 @@ function getLogFileName() {
 // 日志内容写入
 function writeLog(params) {
 	plus.io.requestFileSystem(plus.io.PUBLIC_DOCUMENTS, function(fs) {
+		// 可扩展自定义创建文件夹
 		// 可通过fs操作PUBLIC_DOCUMENTS文件系统 
 		fs.root.getFile(getLogFileName().fileName, {
 			create: true
