@@ -1,3 +1,17 @@
+
+/**
+ * 数组对象查找值返回下标
+ * @param {Array} list 查找数组
+ * @param {all} key 要查找的值
+ * @param {String} varV 要查找的值的字段名
+ */
+function getDicKey(list, key, varV) {
+	let result = 0
+	result = list.findIndex(item => {
+	   return item[varV] == key
+	})
+	return result
+},
 // uni-app/html5plus  日志文件写入
 // 关于开启文件系统权限与配置请参考官方介绍文档 https://www.html5plus.org/doc/zh_cn/io.html
 // 获取日志文件名称
